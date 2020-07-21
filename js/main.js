@@ -59,7 +59,9 @@ function getRound() {
 
 getRound()
 
+
 function compareRock() {
+
     countContainer.style.display = "block"
     container.style.display = "none"
     play.style.display = "none"
@@ -69,44 +71,45 @@ function compareRock() {
     if (counter + 1 <= rounds) {
         if (randomSign == "rock") {
             feedback.innerHTML = `Ìt is a draw. You both chose ${randomSign}`
-        } else if (randomSign == "paper") {
-            feedback.innerHTML = `Paper (user) beats ${randomSign} (comp)`
+        } else if (randomSign == "scissors") {
+            feedback.innerHTML = `Rock (user) beats ${randomSign} (comp)`
             userScore++
             userPoints.innerHTML = userScore
         } else {
-            feedback.innerHTML = `${randomSign} (comp) beats scissors (user)`
+            feedback.innerHTML = `${randomSign} (comp) beats rock (user)`
             compScore++
             compPoints.innerHTML = compScore
         }
-
+        
         if ((counter + 1 == rounds) && (userScore > compScore)) {
-            feedback.innerHTML = `The user wins`
+            feedback.innerHTML += `<br>The user wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
 
         } else if ((counter + 1 == rounds) && (userScore < compScore)) {
-            feedback.innerHTML = `The computer wins`
+            feedback.innerHTML += `<br>The computer wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
-        } else if ((counter + 1 == rounds) && (userScore == compScore)) {
-            feedback.innerHTML = `It is a draw`
+            count.innerHTML = `${counter}/${rounds}`
+        }else if ((counter + 1 == rounds) && (userScore == compScore)) {
+            feedback.innerHTML += `<br>It is a draw`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
         }
         counter++
         count.innerHTML = `${counter}/${rounds}`
     }
     console.log({ rounds })
     console.log({ counter })
+
 }
 
 function comparePaper() {
@@ -131,27 +134,27 @@ function comparePaper() {
         }
         
         if ((counter + 1 == rounds) && (userScore > compScore)) {
-            feedback.innerHTML = `The user wins`
+            feedback.innerHTML += `<br>The user wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
 
         } else if ((counter + 1 == rounds) && (userScore < compScore)) {
-            feedback.innerHTML = `The computer wins`
+            feedback.innerHTML += `<br>The computer wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
         }else if ((counter + 1 == rounds) && (userScore == compScore)) {
-            feedback.innerHTML = `It is a draw`
+            feedback.innerHTML += `<br>It is a draw`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
         }
         counter++
         count.innerHTML = `${counter}/${rounds}`
@@ -160,7 +163,9 @@ function comparePaper() {
     console.log({ counter })
 
 }
+
 function compareScissors() {
+
     countContainer.style.display = "block"
     container.style.display = "none"
     play.style.display = "none"
@@ -172,43 +177,45 @@ function compareScissors() {
             feedback.innerHTML = `Ìt is a draw. You both chose ${randomSign}`
         } else if (randomSign == "rock") {
             feedback.innerHTML = `${randomSign} (comp) beats scissors (user)`
-            compScore++
-            compPoints.innerHTML = compScore + 1
+            userScore++
+            userPoints.innerHTML = userScore
         } else {
             feedback.innerHTML = `Scissors (user) beats ${randomSign} (comp)`
-            userScore++
-            userPoints.innerHTML = userScore + 1
+            compScore++
+            compPoints.innerHTML = compScore
         }
-
+        
         if ((counter + 1 == rounds) && (userScore > compScore)) {
-            feedback.innerHTML = `The user wins`
+            feedback.innerHTML += `<br>The user wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
 
         } else if ((counter + 1 == rounds) && (userScore < compScore)) {
-            feedback.innerHTML = `The computer wins`
+            feedback.innerHTML += `<br>The computer wins`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
         }else if ((counter + 1 == rounds) && (userScore == compScore)) {
-            feedback.innerHTML = `It is a draw`
+            feedback.innerHTML += `<br>It is a draw`
             five.disabled = true
             ten.disabled = true
             fifteen.disabled = true
             twenty.disabled= true
-            return
+            count.innerHTML = `${counter}/${rounds}`
         }
         counter++
         count.innerHTML = `${counter}/${rounds}`
     }
     console.log({ rounds })
     console.log({ counter })
+
 }
+
 
 function restart() {
     countContainer.style.display = "none"
