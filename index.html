@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <form action="">
+        <article id="container">
+            <h1>How many rounds?</h1>
+            <div>
+            <input type="radio" name="rounds" id="five" onchange="getRound()" checked>
+            <label for="">5</label>
+            <input type="radio" name="rounds" id="ten" onchange="getRound()">
+            <label for="">10</label>
+            </div>
+            <div>
+            <input type="radio" name="rounds" id="fifteen" onchange="getRound()">
+            <label for="">15</label>
+            <input type="radio" name="rounds" id="twenty" onchange="getRound()">
+            <label for="">20</label>
+            </div>
+        </article>
+        <article id="count-container">
+            <h1>How many rounds?</h1>
+           <p id="count"></p>
+        </article>
+        <article id="points">
+           <span>USER</span><span id="user-points">0</span><span>:</span><span id="comp-points">0</span><span>COMP</span>
+        </article>
+    </form>
+    <h1 id="play">Let's play</h1>
+    <p id="feedback"></p>
+   <input type="button" value="rock" onclick="compareRock()" id="rock">
+   <input type="button" value="paper" onclick="comparePaper()" id="paper">
+   <input type="button" value="scissors" onclick="compareScissors()" id="scissors">
+   <h2>Make your move!</h2>
+   <a href="" onclick="restart()">restart</a>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
